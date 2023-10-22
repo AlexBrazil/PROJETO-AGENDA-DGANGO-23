@@ -1,3 +1,5 @@
+COMO CONFIGURAR GIT / SSH - https://www.youtube.com/watch?v=SnTBOhYFr28&feature=youtu.be
+
 1) Criar uma pasta para o projeto e abrir no VSCODE;
 2) Vamos criar o novo repositório
 	git config --global user.name 'Seu nome'
@@ -31,6 +33,10 @@
 	usamos o "." para indicar que queremos criar esta pasta na RAIZ do projeto (a pasta criada no passo 1)
 13) Inicialize o servidor do DJANGO (python manage.py runserver)
 14) Abra a URL http://127.0.0.1:8000/ para ver se o servidor foi iniciado
+15) Crie seu(s) App(s) com python manage.py startapp <NOME DO APP>
+16) Adicione o nome do app (todos eles) no .\project\settings.py, na chave INSTALLED_APPS = [ ... ] e adicione o nome do
+    app entre aspas simples. O nome do App é o mesmo que está na pasta do App, no arquivo apps.py
+
 
 
 
