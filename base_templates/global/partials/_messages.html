@@ -1,0 +1,9 @@
+{% if messages %}
+    {% for message in messages %}
+    {% comment %} message.tags são as classes CSS que vem por padrão com as mesagens (temos para error, info, succes, warning e debug) {% endcomment %}
+        {% comment %} <div class="message " {{ message.tags }}> {% endcomment %}
+        <div class="message {{ message.tags }}">    
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}

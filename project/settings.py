@@ -106,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -122,8 +122,21 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'base_static',
 )
+# Esta é a pasta para onde o comando 'collectstatic' coletará os arquivos estáticos para quando EM PRODUÇÃO
+STATIC_ROOT =  BASE_DIR / 'static'
+
+# URL para as imagens que serão enviadas pelo Usuário
+MEDIA_URL = 'media/'
+# Pasta para as imagens
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Aqui estamos sobrescrevendo nossas configurações, conforme nosso local atual (desenvolvimento ou produção)
+try:
+	from project.local_settings.py import *
+except ImportError:
+			...

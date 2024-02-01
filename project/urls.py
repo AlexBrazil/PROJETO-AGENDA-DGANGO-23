@@ -16,9 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+# Aqui importamos as configurações do DJANGO, o settings.py (é usada uma função específica)
+from django.conf import settings
 
 urlpatterns = [
     path('', include('contact.urls')),
     path('admin/', admin.site.urls),
 
 ]
+
+# Aqui concatenamos a URL media e static (isso é para servir o SREVIDOR local apenas)
+urlpatterns += static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root =settings.STATIC_ROOT)
+
